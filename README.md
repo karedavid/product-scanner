@@ -1,6 +1,6 @@
 # Product Scanner
 
-This app lets you scan QR codes containing proudct codes and manage the stock of those products. 
+This app lets you scan QR codes containing product codes and manage the stock of those products. 
 
 ## Introduction
 
