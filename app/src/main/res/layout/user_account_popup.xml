@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle"
+        android:backgroundTint="@color/md_theme_dark_onSecondary"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/iwProfileIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_account_24"
+            android:backgroundTint="@color/md_theme_light_primaryInverse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/twHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Signed in"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iwProfileIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/twUserId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:autoSizeTextType="uniform"
+            android:gravity="center"
+            android:lines="1"
+            android:paddingLeft="20dp"
+            android:text="useremailaddress@host.com"
+            android:textAlignment="gravity"
+            app:autoSizeMaxTextSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/iwProfileIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iwProfileIcon"
+            app:layout_constraintTop_toBottomOf="@id/twHeader" />
+
+        <Button
+            android:id="@+id/btnSignOut"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/sign_out_btn"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/iwProfileIcon" />
+
+        <Button
+            android:id="@+id/btnSignIn"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:visibility="gone"
+            android:text="@string/sign_in_btn"
+            app:layout_constraintTop_toBottomOf="@id/iwProfileIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/behavior_header">
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:key="volume_buttons"
+            app:summary="@string/volume_button_summary"
+            app:title="@string/volume_buttons" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/feedback_header">
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="haptics"
+            app:summary="@string/haptic_summary"
+            app:title="@string/haptic_feedback" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="sounds"
+            app:summary="@string/sound_summary"
+            app:title="@string/sound_feedback" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/database_header">
+
+        <Preference
+            app:key="purge_database"
+            app:summary="@string/clear_database_summary"
+            app:title="@string/clear_database" />
+
+        <Preference
+            app:key="demo_data"
+            app:summary="@string/demo_data_summary"
+            app:title="@string/demo_data" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

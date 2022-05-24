@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/rounded_rectangle_list_item"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/code_view"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center|start"
+        android:lines="4"
+        android:scrollHorizontally="true"
+        android:textColor="@color/md_theme_light_primaryInverse"
+        app:autoSizeMaxTextSize="24sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".6"
+
+        tools:text="PRODUCT CODE" />
+
+    <TextView
+        android:id="@+id/quantity_view"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_rectangle"
+        android:backgroundTint="@color/md_theme_light_primaryInverse"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="10dp"
+        android:textColor="?colorOnPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="24sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3"
+        tools:text="17000000 db" />
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="500dp"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/quantity_view"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

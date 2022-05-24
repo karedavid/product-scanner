@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.scanner.ScannerFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="noScroll"
+            app:menu="@menu/scanner_top_menu"
+            app:title="@string/title_scanner" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="?attr/actionBarSize"
+        android:paddingBottom="20dp">
+
+        <com.budiyev.android.codescanner.CodeScannerView
+            android:id="@+id/scanner_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+
+            android:background="@drawable/rounded_rectangle"
+            android:clipToOutline="true"
+            android:keepScreenOn="true"
+            app:autoFocusButtonColor="@android:color/white"
+            app:autoFocusButtonVisible="true"
+            app:flashButtonColor="@android:color/white"
+            app:flashButtonVisible="true"
+            app:frameAspectRatioHeight="1"
+            app:frameAspectRatioWidth="1"
+            app:frameColor="@android:color/white"
+            app:frameCornersRadius="20dp"
+            app:frameCornersSize="50dp"
+            app:frameSize="0.75"
+            app:frameThickness="3dp"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent=".5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maskColor="#77000000" />
+
+        <TextView
+            android:id="@+id/code_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_rectangle"
+            android:backgroundTint="@color/md_theme_light_primaryInverse"
+            android:gravity="center"
+            android:maxLines="2"
+            android:padding="5dp"
+            android:text="@string/scan_product_hint"
+            android:textAlignment="gravity"
+            android:textColor="#000000"
+            app:autoSizeMaxTextSize="24sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@id/quantity_view"
+            app:layout_constraintTop_toBottomOf="@id/scanner_view" />
+
+        <TextView
+            android:id="@+id/quantity_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_rectangle"
+            android:backgroundTint="@color/md_theme_light_primaryInverse"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/remove_button"
+            app:layout_constraintTop_toBottomOf="@id/code_view" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/remove_button"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:padding="15dp"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="0dp"
+            android:enabled="false"
+            android:text="@string/remove_button"
+            android:textSize="16sp"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/ic_remove_circle_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/camera_button"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/camera_button"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="wrap_content"
+            android:minWidth="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            app:iconPadding="0dp"
+            app:iconSize="25dp"
+            android:enabled="false"
+            android:textSize="16sp"
+            app:cornerRadius="20dp"
+            app:iconGravity="textStart"
+            app:icon="@drawable/ic_camera_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/plus_button"
+            app:layout_constraintStart_toEndOf="@id/remove_button" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/plus_button"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:enabled="false"
+            android:text="@string/add_button"
+            android:textSize="16sp"
+            app:cornerRadius="20dp"
+            android:padding="15dp"
+            app:icon="@drawable/ic_add_circle_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/camera_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
